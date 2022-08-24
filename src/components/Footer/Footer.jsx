@@ -13,6 +13,7 @@ import style from "./Footer.module.css"
 import FooterIcons from './FooterIcons';
 import Advantages from './Advantages';
 import Support from './Support';
+import Reviews from './Reviews';
 
 const Logo = () => {
   return (
@@ -45,6 +46,7 @@ export default function Footer() {
     <>
     <Advantages />
     <Support />
+    <Reviews />
     <Box
       // bg={useColorModeValue('gray.50', 'gray.900')}
       color={useColorModeValue('gray.700', 'gray.200')}
