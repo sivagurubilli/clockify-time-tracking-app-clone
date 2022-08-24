@@ -11,6 +11,7 @@ import {
 } from '@chakra-ui/react';
 import style from "./Footer.module.css"
 import FooterIcons from './FooterIcons';
+import Advantages from './Advantages';
 
 const Logo = () => {
   return (
@@ -40,9 +41,13 @@ const ListHeader = ({ children }) => {
 
 export default function Footer() {
   return (
+    <>
+    <Advantages />
     <Box
-      bg={useColorModeValue('gray.50', 'gray.900')}
-      color={useColorModeValue('gray.700', 'gray.200')}>
+      // bg={useColorModeValue('gray.50', 'gray.900')}
+      color={useColorModeValue('gray.700', 'gray.200')}
+      border={'2px solid black'}
+      >
       <Container as={Stack} maxW={'6xl'} py={10}>
         <SimpleGrid
           templateColumns={{ sm: '1fr 1fr', md: '2fr 1fr 1fr 1fr 1fr' }}
@@ -95,5 +100,6 @@ export default function Footer() {
       </Container>
       <FooterIcons />
     </Box>
+    </>
   );
 }
