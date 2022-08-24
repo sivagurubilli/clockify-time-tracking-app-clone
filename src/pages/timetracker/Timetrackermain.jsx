@@ -1,6 +1,5 @@
 import React from 'react'
 import Navbar from './navbar/Navbar'
-import Timetrackerr from './timetrackermain/Timetrackerr'
 import { useState } from 'react'
 
 import {Routes,Route} from "react-router-dom"
@@ -10,6 +9,7 @@ import Sidebar from './sidebar/Sidebar'
 import Reports from './sidebar-components/reports/Reports'
 import Team from './sidebar-components/team/Team'
 import Projects from './sidebar-components/projects/Projects'
+import Timetracker from './timetrackermain/Timetrackerr'
 
 
 const Timetrackermain = () => {
@@ -27,9 +27,9 @@ const Timetrackermain = () => {
 <div style={toggle? {width:"20%"}:{width:"7%"}}>
     <Sidebar props ={toggle}/>
 </div>
-<div style={{background:"#f2f6f8", width:"80%",marginTop:"50px",height:"100vh"}}>
+<div style={toggle ? {background:"#f2f6f8", width:"80%",marginTop:"50px",height:"100vh"}:{width:"90%",background:"#f2f6f8",marginTop:"50px",height:"100vh"}}>
     <Routes>
-        <Route path ="/" element ={<Timetrackerr/>}/>
+        <Route path ="/" element ={<Timetracker/>}/>
         <Route path ="/calender" element={<Calender/>} />
         <Route path ="/dashboards" element ={<Dashboards/>} />
         <Route path ="/projects" element ={<Projects/>} />
