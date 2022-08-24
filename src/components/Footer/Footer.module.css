@@ -1,0 +1,13 @@
+.stack > a:hover{
+    color: #03a9f4;
+    text-decoration: none;
+}
+
+.footerText{
+    font-size: 12px;
+    color: grey;
+}
+
+.icons{
+    size: 60px;
+}
