@@ -10,6 +10,7 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 import style from "./Footer.module.css"
+import FooterIcons from './FooterIcons';
 
 const Logo = () => {
   return (
@@ -92,6 +93,7 @@ export default function Footer() {
           </Stack>
         </SimpleGrid>
       </Container>
+      <FooterIcons />
     </Box>
   );
 }
