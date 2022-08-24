@@ -1,7 +1,7 @@
 import React from 'react';
 import {Routes, Route} from "react-router-dom";
 import Home from './Home';
-import Timetrackermain from './pages/timetracker/Timetrackermain';
+import Timetrackermain from './timetracker/Timetrackermain';
 
 
 const MainRoutes = () => {

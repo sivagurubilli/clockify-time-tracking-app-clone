@@ -1,0 +1,50 @@
+
+
+.timetrackingdiv{
+  display:flex;
+  box-shadow: rgba(0,0,0,0.2) 0px 18px 50px -10px;
+  border: 1px solid #dedede;
+  height: fit-content;
+  align-items: center;
+  background: white;
+  justify-content: space-between;
+
+
+}
+
+.timetrackingleft{
+   height: 40px;
+   margin: 10px 0px 10px 20px;
+   padding: 5px 15px;
+   font-size: 14px;
+   width: 57%;
+}
+
+.timetrackingleft:hover{
+    border:1px solid #dedede;
+}
+
+.timetrackingrightpart{
+ display: flex;
+ align-items: center;
+ gap: 25px;
+ margin-right: 10px;
+}
+
+timetrackingrightsub{
+   display: flex;
+   align-items: center;
+   gap: 10px;
+}
+
+.button1{
+padding: 10px 30px;
+font-size: 14px;
+line-height: 1.4;
+border-radius: 2px;
+background-color: #03a9f4;
+color: white;
+cursor: pointer;
+font-weight: 600;
+
+}
