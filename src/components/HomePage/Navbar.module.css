@@ -1,0 +1,57 @@
+.nav{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 32px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.div1{
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.div1 > div{
+    padding-right: 40px;
+    color: #5A6B7B;
+    font-size: 14px;
+cursor: pointer;
+}
+
+.div1 > div:hover, .acc > div:hover{
+    color: #03A9F4;
+}
+
+.acc{
+    display: flex;
+    justify-content: space-around;
+}
+
+.acc > div{
+    padding-right: 40px;
+    color: #5A6B7B;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.btn{
+    display: block;
+    /* margin: 20px auto 10px; */
+    border-radius: 3px;
+    width: 170px;
+    height: 2.3rem;
+    color: #03A9F4;
+    border: 1px solid #03A9F4;
+    text-shadow: none;
+    font-size: 14px;
+}
+
+.btn:hover{
+    background-color: #03A9F4;
+        color: #fff;
+}
+
+.btn1{
+    margin-top: 8px;
+    font-size: 14px;
+}
