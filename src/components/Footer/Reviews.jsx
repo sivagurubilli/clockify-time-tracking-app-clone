@@ -129,19 +129,6 @@ margin: 10px auto 10px;
 text-align: center; 
 `;
 
-const H2 = styled.h2`
-padding-bottom: 10px;
-text-align: center;
-font-size: 34px;
-line-height: 1.2;
-font-weight: normal;
-color: #3D4853;
-margin-block-start: 0.83em;
-margin-block-end: 0.83em;
-margin-inline-start: 0px;
-margin-inline-end: 0px;
-`;
-
 const P = styled.p`
 margin-right: auto;
 margin-left: auto;
