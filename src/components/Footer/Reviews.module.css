@@ -1,0 +1,25 @@
+.title{
+    color: #5A6B7B;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.star{
+    color: #FFBF00;
+}
+
+.text{
+    padding-top: 10px;
+    color: #718191;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.author{
+    padding-top: 4px;
+    color: #718191;
+    font-size: 10px;
+    font-style: italic;
+}
+
