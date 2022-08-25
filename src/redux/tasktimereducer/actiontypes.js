@@ -1,4 +1,5 @@
-export const GET_PROJECTS = "GET_PROJECTS";
-export const ADD_PROJECTS = "ADD_PROJECTS";
-export const UPDATE_PROJECTS = "UPDATE_PROJECTS";
-export const REMOVE_PROJECTS = "REMOVE_PROJECTS";
+export const GET_TASKS = "GET_TASKS";
+export const ADD_TASKS = "ADD_TASKS";
+export const UPDATE_TASKS = "UPDATE_TASKS";
+export const REMOVE_TASKS = "REMOVE_TASKS";
+
