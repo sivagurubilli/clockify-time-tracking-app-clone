@@ -11,6 +11,7 @@ const tasksinitstate ={
 
 export const taskreducer =(state = tasksinitstate,action)=>{
    const {type,payload} = action
+
    switch(type){
     case types.GET_TASKS:
  return{
@@ -21,7 +22,9 @@ export const taskreducer =(state = tasksinitstate,action)=>{
  case types.ADD_TASKS:
     return{
         ...state,
-        taskdata:payload
+        taskdata:[...state.taskdata,payload]
     }
+    default:
+        return state
    }
 }

@@ -9,6 +9,7 @@ const taskRouter = Router()
 taskRouter.get(":userId/tasks",async(req,res)=>{
     const userId = req.params.userId
     const tasks = await taskModel.find({userId})
+    
     res.send(tasks)
 })
 
@@ -29,3 +30,5 @@ task.save((err,success)=>{
 })
 
 })
+
+module.exports  =taskRouter

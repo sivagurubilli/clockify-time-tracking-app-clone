@@ -12,6 +12,6 @@ const tasksSchema = mongoose.Schema({
 
 })
 
-const taskModel  = mongoose.model("tasks1",tasksSchema)
+const taskModel  = mongoose.model("tasks",tasksSchema)
 
 module.exports =taskModel

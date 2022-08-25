@@ -20,7 +20,7 @@ const Timetracker = () => {
 
 const starttime = useRef(null)
 const dispatch = useDispatch()
-const data = useSelector((store)=>store.tasks.taskdata)
+const data = useSelector((store)=>store.taskreducer1.taskdata)
 
 
  useEffect(()=>{
@@ -82,6 +82,7 @@ const data = useSelector((store)=>store.tasks.taskdata)
 
 
   return (
+    <div>
     <div className={styles.timetrackingdiv}>
    <input className={styles.timetrackingleft} placeholder="what are you working on ? " onChange ={(e)=>setinput(e.target.value)} />
   <div className={styles.timetrackingrightpart}>
@@ -96,29 +97,32 @@ const data = useSelector((store)=>store.tasks.taskdata)
 
                     <div style={{borderRight:'1px solid #e4eaee', padding:'5px 20px 5px 0px', fontSize:'20px', color:'#999999'}}>$</div>
                     <div style={{fontWeight:'600', fontSize:'18px'}}>{mstotime(watch)}</div>
-                    <button className={styles.button1} onClick={check ? start : stop}>{check ? "START" : "STOP"}</button>
+                    <button className={styles.button1} style={check? {backgroundColor:"blue"}:{backgroundColor:"pink"}} onClick={check ? start : stop}>{check ? "START" : "STOP"}</button>
                     <div style={{display:'grid',gap:'10px'}}>
                         <img src={clock} alt="error" />
                         <img src={list} alt="error" />
                     </div>
   
   </div>
+  </div>
+            
+
 <br/>
 <br/>
-<br/>
+
+ 
 <div style={{display:'flex', justifyContent:'space-between'}}>
                 <p style={{ fontSize:'14px'}}>This Week</p>
                 <div style={{ fontSize:'12px', display:'flex', alignItems:'center',color:'#9c9c9c'}}>Week Total:
                  <p style={{ fontSize:'18px', padding:'0px 10px', fontWeight:'500',color:'black'}}>{mstotime(totaltime)}</p> 
                  </div>
             </div>
-            <div>
+    
 
-              {data.map((el,ind)=>(
+              {data.length>0 && data.map((el,ind)=>(
                 <Tasklist key ={ind}  el={el}/>
               ))}
-            </div>
-
+           
     </div>
   )
 }

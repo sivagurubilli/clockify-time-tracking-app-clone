@@ -4,13 +4,13 @@ const express = require("express")
 const app = express()
 const cors = require("cors")
 const {connection} = require("./dbconfig")
-// const taskRouter = require("./routes/task.routes")
+const taskRouter = require("./routes/task.routes")
 
 
 
 connection()
 
-// app.use("/tasks",taskRouter)
+app.use("/tasks",taskRouter)
 
 const port = process.env.PORT || 8080;
 

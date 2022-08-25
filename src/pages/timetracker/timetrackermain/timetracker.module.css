@@ -8,6 +8,7 @@
   align-items: center;
   background: white;
   justify-content: space-between;
+  margin-top: 30px;
 
 
 }
@@ -17,7 +18,7 @@
    margin: 10px 0px 10px 20px;
    padding: 5px 15px;
    font-size: 14px;
-   width: 57%;
+   width: 40%;
 }
 
 .timetrackingleft:hover{
@@ -31,7 +32,7 @@
  margin-right: 10px;
 }
 
-timetrackingrightsub{
+.timetrackingrightsub{
    display: flex;
    align-items: center;
    gap: 10px;
