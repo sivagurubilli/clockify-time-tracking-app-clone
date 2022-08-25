@@ -7,7 +7,7 @@ import {
 } from "redux";
 
 import thunk from "redux-thunk"
-import {reducer as taskreducer} from "./tasktimereducer/reducer"
+import {taskreducer as taskreducer} from "./tasktimereducer/reducer"
 
 const rootreducer = combineReducers({tasks :taskreducer})
 

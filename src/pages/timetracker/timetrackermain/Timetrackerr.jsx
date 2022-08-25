@@ -7,6 +7,8 @@ import clock from "../timetrackasset/clock-blue.svg"
 import list from "../timetrackasset/list-blue.svg"
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
+import { addtasks, gettasks } from '../../../redux/tasktimereducer/action'
+import Tasklist from './Tasklist'
 
 
 const Timetracker = () => {
@@ -53,7 +55,7 @@ const data = useSelector((store)=>store.tasks.taskdata)
  clearInterval(timer)
  setwatch(0)
  settimer(null)
- dispatch(addtask({
+ dispatch(addtasks({
   title:input,
   starttime:starttime.current,
   endtime:y.getHours()+":"+y.getMinutes(),
@@ -66,9 +68,9 @@ const data = useSelector((store)=>store.tasks.taskdata)
 
  function mstotime(duration){
    var milliseconds = parseInt((duration % 1000))
-   ,seconds = parseInt((duration/1000)%60),
- minutes = parseInt((duration/(1000*60))%60),
- hours = parseInt((duration/(1000*60*60))%24);
+    var seconds = parseInt((duration/1000)%60)
+  var minutes = parseInt((duration/(1000*60))%60)
+  var hours = parseInt((duration/(1000*60*60))%24);
 
  hours =(hours <10 ) ?"0"+hours : hours;
  minutes = (minutes < 10 ) ? "0"+ minutes : minutes;
@@ -110,7 +112,12 @@ const data = useSelector((store)=>store.tasks.taskdata)
                  <p style={{ fontSize:'18px', padding:'0px 10px', fontWeight:'500',color:'black'}}>{mstotime(totaltime)}</p> 
                  </div>
             </div>
-            
+            <div>
+
+              {data.map((el,ind)=>(
+                <Tasklist key ={ind}  el={el}/>
+              ))}
+            </div>
 
     </div>
   )
