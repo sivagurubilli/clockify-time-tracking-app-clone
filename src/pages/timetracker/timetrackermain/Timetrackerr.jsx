@@ -121,8 +121,8 @@ const data = useSelector((store)=>store.taskreducer1.taskdata)
             </div>
     
 
-              {data.length>0 && data.map((el,ind)=>(
-                <Tasklist key ={ind}  el={el}/>
+              {data.length>0 && data.map((e,ind)=>(
+                <Tasklist key ={ind}  e={e}/>
               ))}
            
     </div>
