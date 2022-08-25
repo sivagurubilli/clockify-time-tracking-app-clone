@@ -22,7 +22,7 @@ const data = useSelector((store)=>store.tasks.taskdata)
 
 
  useEffect(()=>{
-  dispatch(gettasks())
+  // dispatch(gettasks())
  },[])
 
 
@@ -53,12 +53,12 @@ const data = useSelector((store)=>store.tasks.taskdata)
  clearInterval(timer)
  setwatch(0)
  settimer(null)
- dispatch(addtask({
-  title:input,
-  starttime:starttime.current,
-  endtime:y.getHours()+":"+y.getMinutes(),
-  timediff:watch,
- }))
+//  dispatch(addtask({
+//   title:input,
+//   starttime:starttime.current,
+//   endtime:y.getHours()+":"+y.getMinutes(),
+//   timediff:watch,
+//  }))
 
 
  }
