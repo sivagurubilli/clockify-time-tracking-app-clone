@@ -24,7 +24,7 @@ const data = useSelector((store)=>store.taskreducer1.taskdata)
 
 
  useEffect(()=>{
-  dispatch(gettasks())
+  // dispatch(gettasks())
  },[])
 
 
@@ -55,12 +55,14 @@ const data = useSelector((store)=>store.taskreducer1.taskdata)
  clearInterval(timer)
  setwatch(0)
  settimer(null)
+
  dispatch(addtasks({
   title:input,
   starttime:starttime.current,
   endtime:y.getHours()+":"+y.getMinutes(),
   timediff:watch,
  }))
+
 
 
  }
