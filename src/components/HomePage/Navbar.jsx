@@ -4,6 +4,7 @@ import {
     Button
 } from '@chakra-ui/react';
 import style from "./Navbar.module.css"
+import { Link } from 'react-router-dom';
 
  const Navbar = () => {
   return (
@@ -22,12 +23,17 @@ import style from "./Navbar.module.css"
         {/* Account */}
         <div className={style.acc}>
             <Box>
+            <Link to="/login">
                 <button className={style.btn1} colorScheme='teal' variant='ghost'>LOG IN</button>
+                </Link>
             </Box>
             <Box>
-                <button className={style.btn}>
+            <Link to="/signup">          
+               <button className={style.btn}>
                 SIGN UP FREE
                 </button>
+                </Link>
+   
             </Box>
         </div>
     </nav>
