@@ -64,6 +64,11 @@
     box-sizing: border-box;
 }
 
+.btn:hover{
+    background: #0b71a8;
+
+}
+
 .div2{
     margin-top: -16px;
     font-size: 13px;
@@ -72,5 +77,93 @@
     overflow-wrap: break-word;
     text-align: center;
     margin: auto;
+}
+
+.num:hover{
+    text-decoration: underline;
+}
+
+.logos{
+    /* border: 2px solid black; */
+    /* padding-top: 80px; */
+    margin: auto;
+padding-right: 10px;
+
+margin-top: 72px;
+    /* opacity: 0.6; */
+    text-align: center;
+    /* border: 2px solid black; */
+    /* justify-items: center; */
+}
+
+.heroVideo{
+    width: 90%;
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
+
+.heroImage{
+    margin-bottom: -2.3px;
+    margin-right: auto;
+    margin-left: auto;
+    height: auto;
+    text-align: center;
+    align-items: flex-end;
+    max-width: 100%;
+    border: 0;
+}
+
+.playButton{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 75px;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    cursor: pointer;
+}
+
+.heroBtnText{
+    display: none;
+    border-radius: 3px;
+    padding: 0px 10px;
+    color: white;
+    background-color: #3D4853;
+    font-size: 12px;
+    text-transform: uppercase;
+    line-height: 1.5rem;
+    overflow-wrap: break-word;
+    margin: 0;
+}
+
+.playBtn{
+    margin-bottom: 10px;
+    border-radius: 50%;
+    box-shadow: 0 3px 24px 0 rgb(0 0 0 / 50%);
+    max-width: 100%;
+    height: auto;
+    border: 0;
+}
+
+.demoVideo{
+display: none;
+}
+
+.iframeCont{
+
+}
+
+.closeBtn{
+    position: fixed;
+    z-index: 999999;
+    top: 10px;
+    right: 10px;
+    width: 70px;
+    cursor: pointer;
+    max-width: 100%;
+    height: auto;
+    border: 0;
 }
 
