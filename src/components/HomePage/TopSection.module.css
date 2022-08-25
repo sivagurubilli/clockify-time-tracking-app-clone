@@ -151,8 +151,12 @@ margin-top: 72px;
 display: none;
 }
 
-.iframeCont{
-
+.switchBtn{
+    /* border: 2px solid black; */
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+  width: 5%;
 }
 
 .closeBtn{

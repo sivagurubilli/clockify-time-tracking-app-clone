@@ -55,7 +55,7 @@ const Support = () => {
 export default Support
 
 const Div = styled.div`
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
     margin-bottom: 100px;
     margin-top: 100px;
     justify-items: center;

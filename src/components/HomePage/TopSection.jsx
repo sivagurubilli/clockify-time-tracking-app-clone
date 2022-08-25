@@ -1,6 +1,7 @@
 import React from "react";
 import style from "./TopSection.module.css";
 import {Link} from "react-router-dom";
+import { Switch, FormControl, FormLabel } from '@chakra-ui/react'
 
 export const TopSection = () => {
     
@@ -63,6 +64,13 @@ export const TopSection = () => {
       <div className={style.demoVideo}>
         <div className={style.iframeCont}></div>
         <img className={style.closeBtn} src="https://clockify.me/assets/images/close-button.svg" alt="" />
+      </div>
+
+      {/* Switch-Button */}
+      <div className={style.switchBtn}>
+      <FormControl display='flex' alignItems='center' >
+  <Switch id='email-alerts' />
+</FormControl>
       </div>
     </div>
   );
