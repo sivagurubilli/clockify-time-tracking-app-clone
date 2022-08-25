@@ -6,22 +6,25 @@ const taskModel = require("../models/tasks")
 const taskRouter = Router()
 
 
-taskRouter.get(":userId/tasks",async(req,res)=>{
+taskRouter.get("/:userId/task",async(req,res)=>{
     const userId = req.params.userId
     const tasks = await taskModel.find({userId})
     
     res.send(tasks)
 })
 
-taskRouter.post("/:userId/tasks",async(req,res)=>{
+taskRouter.post("/:userId/task",async(req,res)=>{
     const userId = req.params.userId
+    // const {title,starttime,endtime,timediff} = req.body
+    // console.log(title)
+    console.log(req.body)
 let payload ={
     ...req.body,
     userId
 }
 
-const task = await new taskModel(payload)
-task.save((err,success)=>{
+const tasks = await new taskModel(payload)
+tasks.save((err,success)=>{
     if(err){
         return res.status(500).send({message:"something went wrong"})
 
@@ -30,5 +33,6 @@ task.save((err,success)=>{
 })
 
 })
+
 
 module.exports  =taskRouter
