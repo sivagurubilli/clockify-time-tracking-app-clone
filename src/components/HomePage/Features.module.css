@@ -1,5 +1,9 @@
-.div{
+.maindiv{
     font-family: 'Roboto', sans-serif;
+}
+
+.div{
+    text-align: center;
 }
 
 .header{
@@ -28,3 +32,67 @@
     color: #5A6B7B;
     overflow-wrap: break-word;
 }
+
+.div2{
+    /* border: 2px solid black; */
+    display: flex;
+   text-align: center;
+   margin: auto;
+   margin-top: 80px;
+}
+
+.div2 > div{
+    /* border: 2px solid green; */
+}
+
+.div2 > div:first-child{
+    margin-right: 250px;
+    margin-left: 300px;
+    text-align: left;
+    width: 300px;
+}
+
+.inner1{
+padding-top: 30px;
+
+}
+
+.inner1 > div{
+    /* border: 2px solid blue; */
+    margin-bottom: 15px;
+}
+
+.heading{
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.inner1  h4{
+    font-weight: 600;
+
+}
+
+.inner1  p{
+    color: #a4abb0c3;
+    
+}
+
+.division2{
+    display: flex;
+   text-align: center;
+   margin: auto;
+   margin-top: 80px;
+}
+
+.division2> div:first-child{
+    margin-right: 250px;
+    margin-left: 250px;
+}
+
+.division2> div:last-child{
+    text-align: left;
+    /* border: 2px solid black; */
+padding-top: 30px;
+}
+
