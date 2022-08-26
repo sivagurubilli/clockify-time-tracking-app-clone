@@ -1,0 +1,17 @@
+
+
+.timetrackmain{
+  display: flex;
+  height: 60px;
+  width: 100%;
+  align-items: center;
+  background: white;
+  border-bottom: 5px slid #9c9c9c9c;
+  justify-content: space-between;
+}
+
+.timetrackright{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
