@@ -58,7 +58,7 @@ import style from "./Footer.module.css"
             <SocialButton className={style.icons} label={'Twitter'} href={'https://twitter.com/Clockify'}>
               <FaTwitter />
             </SocialButton>
-              <SocialButton className={style.icons} label={'Facebook'} href={'https://www.instagram.com/clockify.me/'}>
+              <SocialButton className={style.icons} label={'Facebook'} href={'https://www.facebook.com/clockify.me'}>
               <FaFacebook />
             </SocialButton>
             <SocialButton className={style.icons} label={'YouTube'} href={'https://www.youtube.com/clockify'}>
