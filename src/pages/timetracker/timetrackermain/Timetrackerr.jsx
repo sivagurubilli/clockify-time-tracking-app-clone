@@ -17,6 +17,7 @@ const Timetracker = () => {
   const [timer,settimer] = useState(null)
   const [check,setcheck] = useState(true)
   const [totaltime,settotaltime] = useState(0)
+  const [date,setdate] = useState(new Date())
 
 const starttime = useRef(null)
 const dispatch = useDispatch()
@@ -28,6 +29,7 @@ const data = useSelector((store)=>store.taskreducer1.taskdata)
  },[])
 
 
+ 
  const start =()=>{
   let x = new Date()
   starttime.current = x.getHours()+ ":" +x.getMinutes()
@@ -44,24 +46,29 @@ const data = useSelector((store)=>store.taskreducer1.taskdata)
  }
 
  const stop =()=>{
+
+
+  let y= new Date();
+ setcheck(!check)
+ clearInterval(timer)
+ setwatch(0)
+setdate(new Date())
+ settimer(null)
+ dispatch(addtasks({
+  title:input,
+  starttime:starttime.current,
+  endtime:y.getHours()+ ":" +y.getMinutes(),
+  timediff:watch,
+  date:date
+ }))
+
  var total =0;
   for(var i=0;i<data.length;i++){
     total += Number(data[i].timediff)
   }
 
   settotaltime(total)
-  let y= new Date();
- setcheck(!check)
- clearInterval(timer)
- setwatch(0)
- settimer(null)
- dispatch(addtasks({
-  title:input,
-  starttime:starttime.current,
-  endtime:y.getHours()+":"+y.getMinutes(),
-  timediff:watch,
- }))
-
+  
 
 
  }

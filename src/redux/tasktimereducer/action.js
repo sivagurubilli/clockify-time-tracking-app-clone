@@ -11,10 +11,10 @@ export const gettasks =()=>(dispatch)=>{
 }
 
 
-export const addtasks =(payload)=>(dispach)=>{
- console.log(payload)
- axios.post(`http://localhost:8080/tasks/${1}/task`,payload).then((r)=>{
-    dispach({type:types.ADD_TASKS,payload:r.data})
+export const addtasks =(payload)=>(dispatch)=>{
+
+ axios.post(`http://localhost:8080/tasks/${1}/task`,  payload).then((r)=>{
+    dispatch({type:types.ADD_TASKS,payload:r.data})
    })
 }
 

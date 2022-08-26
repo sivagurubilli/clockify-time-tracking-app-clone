@@ -9,6 +9,8 @@ const taskRouter = require("./routes/task.routes")
 
 
 connection()
+app.use(cors())
+app.use(express.json())
 
 app.use("/tasks",taskRouter)
 
