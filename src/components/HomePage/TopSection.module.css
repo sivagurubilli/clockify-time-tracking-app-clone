@@ -1,0 +1,173 @@
+.header{
+    padding-top: 100px;
+    padding-bottom: 10px;
+    text-align: center;
+    font-size: 40px;
+    line-height: 1.2;
+    font-weight: normal;
+    color: #3D4853;
+    margin: 0;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    /* border: 2px solid black; */
+}
+
+.div{
+    font-family: 'Roboto', sans-serif;
+}
+
+.text{
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 640px;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    text-align: center;
+    color: #5A6B7B;
+    overflow-wrap: break-word;
+    padding: 0;
+    display: block;
+}
+
+.stars{
+    white-space: nowrap;
+    margin-top: 16px;
+    /* opacity: 0.6; */
+    text-align: center;
+    /* border: 2px solid black; */
+    justify-items: center;
+}
+
+.btn{
+    padding-top: 5px;
+    margin-top: 25px;
+    margin-bottom: 2%;
+    border-radius: 5px;
+    background: #0288d1;
+    width: 330px;
+    height: 56px;
+    text-transform: uppercase;
+    color: #fff;
+    border-bottom: 4px solid #0277BD;
+    text-shadow: 0 1px 1px rgb(0 0 0 / 45%);
+    overflow: visible;
+    /* border: 0; */
+    font: inherit;
+    letter-spacing: inherit;
+    cursor: pointer;
+    /* appearance: auto; */
+    writing-mode: horizontal-tb !important;
+    word-spacing: normal;
+    display: inline-block;
+    text-align: center;
+    align-items: flex-start;
+    box-sizing: border-box;
+}
+
+.btn:hover{
+    background: #0b71a8;
+
+}
+
+.div2{
+    margin-top: -16px;
+    font-size: 13px;
+    color: #01579B;
+    line-height: 1.5rem;
+    overflow-wrap: break-word;
+    text-align: center;
+    margin: auto;
+}
+
+.num:hover{
+    text-decoration: underline;
+}
+
+.logos{
+    /* border: 2px solid black; */
+    /* padding-top: 80px; */
+    margin: auto;
+padding-right: 10px;
+
+margin-top: 72px;
+    /* opacity: 0.6; */
+    text-align: center;
+    /* border: 2px solid black; */
+    /* justify-items: center; */
+}
+
+.heroVideo{
+    width: 90%;
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
+
+.heroImage{
+    margin-bottom: -2.3px;
+    margin-right: auto;
+    margin-left: auto;
+    height: auto;
+    text-align: center;
+    align-items: flex-end;
+    max-width: 100%;
+    border: 0;
+}
+
+.playButton{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 75px;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    cursor: pointer;
+}
+
+.heroBtnText{
+    display: none;
+    border-radius: 3px;
+    padding: 0px 10px;
+    color: white;
+    background-color: #3D4853;
+    font-size: 12px;
+    text-transform: uppercase;
+    line-height: 1.5rem;
+    overflow-wrap: break-word;
+    margin: 0;
+}
+
+.playBtn{
+    margin-bottom: 10px;
+    border-radius: 50%;
+    box-shadow: 0 3px 24px 0 rgb(0 0 0 / 50%);
+    max-width: 100%;
+    height: auto;
+    border: 0;
+}
+
+.demoVideo{
+display: none;
+}
+
+.switchBtn{
+    /* border: 2px solid black; */
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+  width: 5%;
+}
+
+.closeBtn{
+    position: fixed;
+    z-index: 999999;
+    top: 10px;
+    right: 10px;
+    width: 70px;
+    cursor: pointer;
+    max-width: 100%;
+    height: auto;
+    border: 0;
+}
+

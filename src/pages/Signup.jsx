@@ -12,11 +12,23 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import { useState } from "react";
 export default function Signup() {
+
+
+const [userdata,setuserData]=useState({
+id:"",
+email:"",
+password:""
+
+
+
+
+  })
   return (
-    <Flex minH={"100vh"} align={"center"} justify={"center"}>
-      <div style={{ display: "flex" }}>
+    <>
+    <div>
+        <div style={{ display: "flex" }}>
         <img
           alt="img"
           src="https://app.clockify.me/assets/logo.svg"
@@ -38,12 +50,12 @@ export default function Signup() {
           Get started with Clockify
         </h2>
         <p
-          style={{ fontSize: "17px", textAlign: "center", marginTop: "-10px" }}
+          style={{ fontSize: "17px", textAlign: "center", marginTop: "7px" }}
         >
           Create a free account to start tracking time and supercharge your
           productivity.
         </p>
-        <p style={{ textAlign: "center", fontSize: "11px" }}>
+        <p style={{ textAlign: "center", fontSize: "11px" ,marginTop: "7px" }}>
           No credit card required · Unsubscribe at any time
         </p>
       </div>
@@ -52,19 +64,22 @@ export default function Signup() {
         <div
           style={{
             height: "390px",
-            width: "335px",
+            width: "370px",
             marginTop: "-60px",
-            margin: "auto",
+            marginLeft: "500px",
+              margin: "auto",
             padding: "20px",
             boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
           }}
         >
-          <h3>Sign up</h3>
+          <h1 style={{fontSize:"20px",marginLeft:"13px",fontWeight:"500"}}>Sign up</h1>
           <Input
-            style={{ height: "40px", width: "300px", marginLeft: "10px" }}
+            style={{ height: "40px", width: "300px", marginLeft: "10px",marginTop:"20px" }}
             type="email"
             placeholder=" Enter Email"
-            name="email"
+            
+            onChange={(e) => setuserData({ ...userdata, email: e.target.value })}
+          
           />
 
           <Input
@@ -76,26 +91,36 @@ export default function Signup() {
             }}
             type="password"
             placeholder=" Choose Password"
-            name="password"
+          
+            onChange={(e) => setuserData({ ...userdata, password: e.target.value })}
           />
 
           <input
             type="checkbox"
-            style={{ marginTop: "22px", marginLeft: "10px" }}
+            style={{ marginTop: "22px", marginLeft: "15px" }}
           />
-          <span>I agree to the Terms of Use</span>
-          <button
-            style={{
-              height: "40px",
-              width: "300px",
-              marginTop: "20px",
-              marginLeft: "14px",
-            }}
-          >
-            Create Free Account
-          </button>
+          <span>       I agree to the<span style={{color:"blue"}}>     Terms of Use</span></span>
+          <Button style={{marginTop:"20px",padding:"25px",paddingRight:"90px",paddingLeft:"70px",textAlign:"center",marginLeft:'8px'}}>Create Free Account</Button>
+          <div style={{display:"flex",height:"30px",width:"100%",marginTop:"10px"}}>
+
+          <div style={{display:"flex",height:"1px",width:"40%",border:"0.1px solid grey",marginTop:"10px",marginLeft:"10px"}} >
+          </div>
+          <h2 style={{marginLeft:"10px"}}>OR</h2>
+          
+          <div style={{display:"flex",height:"1px",width:"42%",border:"0.1px solid grey",marginTop:"10px",marginLeft:"10px"}}>
+          </div>
+          
+          </div>
+          <div style={{display:"flex",height:"40px",padding:"8px",width:"93%",marginTop:"10px",border :"1px solid grey",marginLeft:"10px"}}>
+          <img src="https://app.clockify.me/assets/ui-icons/icon-google.svg" alt="google" />
+          <h1 style={{marginLeft:"50px"}}>Continue With Google</h1>
+          
+          </div>
+          
         </div>
       </form>
-    </Flex>
+      </div>
+      </>
+  
   );
 }

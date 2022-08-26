@@ -26,7 +26,7 @@ const Advantages = () => {
 export default Advantages
 
 const Div = styled.div`
-    border: 2px solid green;
+    /* border: 2px solid green; */
     margin-bottom: 100px;
     margin-top: 100px;
     display: flex;

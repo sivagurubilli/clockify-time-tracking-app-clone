@@ -81,7 +81,9 @@ const date1 = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYea
  setwatch(0)
 setdate(date1)
  settimer(null)
+
  if(play==0){
+
  dispatch(addtasks({
   title:input,
   starttime:starttime.current,
