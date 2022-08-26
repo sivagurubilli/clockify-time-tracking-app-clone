@@ -68,8 +68,18 @@ padding-top: 30px;
     font-size: 18px;
 }
 
+.inner1 > div{
+    cursor: pointer;
+
+}
+
 .inner1  h4{
     font-weight: 600;
+
+}
+
+.inner1  h4:hover{
+    color: #03A9F4;
 
 }
 
