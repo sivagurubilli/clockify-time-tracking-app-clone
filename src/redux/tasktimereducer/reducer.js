@@ -24,6 +24,11 @@ export const taskreducer =(state = tasksinitstate,action)=>{
         ...state,
         taskdata:[...state.taskdata,payload]
     }
+    case types.REMOVE_TASKS:
+      return{
+         ...state,
+         taskdata:[...state.taskdata.filter((e)=>e._id!=payload)]
+      }
     default:
         return state
    }

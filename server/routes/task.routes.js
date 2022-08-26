@@ -14,7 +14,7 @@ taskRouter.get("/:userId/task",async(req,res)=>{
 })
 
 taskRouter.post("/:userId/task",async(req,res)=>{
-   // const userId = req.params.userId
+    const userId = req.params.userId
 
     // const {title,starttime,endtime,timediff} = req.body
     // console.log(title)
@@ -22,7 +22,7 @@ taskRouter.post("/:userId/task",async(req,res)=>{
 
 let payload ={
     ...req.body,
-    userId:1
+    userId: userId
    
 }
 
@@ -40,4 +40,19 @@ tasks.save((err,success)=>{
 })
 
 
+taskRouter.delete("/:userId/task/:id",async(req,res)=>{
+  await taskModel.deleteOne({_id:req.params.id})
+  res.send("succesfully delete task")
+})
+
+taskRouter.patch("/:userId/task/:id",async(req,res)=>{
+    try{
+        await taskModel.findByIdAndUpdate({_id:req.params.id,},{timediff:timediff+req.body}).lean().exec()
+
+        const task =await taskModel.findOne({_id:req.params.id})
+        res.status(200).send(task)
+    }catch(err){
+        res.status(500).send(err.message)
+    }
+})
 module.exports  =taskRouter

@@ -7,7 +7,7 @@ import clock from "../timetrackasset/clock-blue.svg"
 import list from "../timetrackasset/list-blue.svg"
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
-import { addtasks, gettasks } from '../../../redux/tasktimereducer/action'
+import { addtasks, gettasks, removetask, updatetasks } from '../../../redux/tasktimereducer/action'
 import Tasklist from './Tasklist'
 
 
@@ -15,17 +15,23 @@ const Timetracker = () => {
   const [watch,setwatch] = useState(0)
   const [input,setinput] = useState("")
   const [timer,settimer] = useState(null)
+  const [play,setplay]= useState(0)
   const [check,setcheck] = useState(true)
   const [totaltime,settotaltime] = useState(0)
   const [date,setdate] = useState(new Date())
-
+const [playt,setplayt] = useState(true)
 const starttime = useRef(null)
 const dispatch = useDispatch()
 const data = useSelector((store)=>store.taskreducer1.taskdata)
 
 
+const current = new Date();
+const date1 = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
+
+
+
  useEffect(()=>{
-  // dispatch(gettasks())
+  dispatch(gettasks())
  },[])
 
 
@@ -45,6 +51,27 @@ const data = useSelector((store)=>store.taskreducer1.taskdata)
 
  }
 
+
+ const updatetask2=(id1)=>{
+  setplay(1)
+  setplayt(!playt)
+  setcheck(false)
+ 
+    dispatch(updatetasks(watch,id1))
+    setwatch(0)
+    let x = new Date()
+    starttime.current = x.getHours()+ ":" +x.getMinutes()
+    if(!timer){
+      let id = setInterval(()=>{
+        setwatch((e)=>e+10)
+      },10)
+      settimer(id)
+    }
+  }
+
+ 
+
+
  const stop =()=>{
 
 
@@ -52,27 +79,34 @@ const data = useSelector((store)=>store.taskreducer1.taskdata)
  setcheck(!check)
  clearInterval(timer)
  setwatch(0)
-setdate(new Date())
+setdate(date1)
  settimer(null)
+
+ if(play==0){
 
  dispatch(addtasks({
   title:input,
   starttime:starttime.current,
   endtime:y.getHours()+ ":" +y.getMinutes(),
   timediff:watch,
-  date:date
+  date:date1
  }))
+ }
+setplay(0)
 
- var total =0;
+ }
+
+useEffect(()=>{
+
+  var total =0;
   for(var i=0;i<data.length;i++){
     total += Number(data[i].timediff)
   }
 
   settotaltime(total)
   
+},[stop,removetask])
 
-
- }
 
 
  function mstotime(duration){
@@ -87,7 +121,6 @@ setdate(new Date())
 
  return hours +":"+ minutes +":"+ seconds
  }
-
 
 
   return (
@@ -129,7 +162,7 @@ setdate(new Date())
     
 
               {data.length>0 && data.map((e,ind)=>(
-                <Tasklist key ={ind}  e={e}/>
+                <Tasklist key ={ind} date={date1} e={e} updatetask1={ updatetask2}/>
               ))}
            
     </div>
