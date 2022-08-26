@@ -15,3 +15,8 @@
   align-items: center;
   gap: 10px;
 }
+
+
+.options {
+cursor: pointer;
+}
