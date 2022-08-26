@@ -12,8 +12,19 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import { useState } from "react";
 export default function Signup() {
+
+
+const [userdata,setuserData]=useState({
+id:"",
+email:"",
+password:""
+
+
+
+
+  })
   return (
     <>
     <div>
@@ -66,7 +77,9 @@ export default function Signup() {
             style={{ height: "40px", width: "300px", marginLeft: "10px",marginTop:"20px" }}
             type="email"
             placeholder=" Enter Email"
-            name="email"
+            
+            onChange={(e) => setuserData({ ...userdata, email: e.target.value })}
+          
           />
 
           <Input
@@ -78,7 +91,8 @@ export default function Signup() {
             }}
             type="password"
             placeholder=" Choose Password"
-            name="password"
+          
+            onChange={(e) => setuserData({ ...userdata, password: e.target.value })}
           />
 
           <input
