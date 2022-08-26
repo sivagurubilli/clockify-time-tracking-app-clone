@@ -4,6 +4,10 @@ import {Link} from "react-router-dom";
 import { Switch, FormControl, FormLabel } from '@chakra-ui/react'
 
 export const TopSection = () => {
+
+  const changeTheme = () => {
+    
+  }
     
   return (
     <div className={style.div}>
@@ -69,7 +73,7 @@ export const TopSection = () => {
       {/* Switch-Button */}
       <div className={style.switchBtn}>
       <FormControl display='flex' alignItems='center' >
-  <Switch id='email-alerts' />
+  <Switch id='email-alerts' onClick={changeTheme} />
 </FormControl>
       </div>
     </div>

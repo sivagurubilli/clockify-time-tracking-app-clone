@@ -3,11 +3,7 @@ import {
     Box,
     Button
 } from '@chakra-ui/react';
-
 import style from "./Navbar.module.css";
-
-
-import style from "./Navbar.module.css"
 import { Link } from 'react-router-dom';
 
 
