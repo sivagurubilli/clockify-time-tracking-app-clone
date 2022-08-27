@@ -14,8 +14,7 @@ const MainRoutes = () => {
       <Route path ="/timetrackermain/*" element={<Timetrackermain />}/>
       <Route path ="/signup" element={<Signup />}/>
       <Route path ="/login" element={<Login />}/>
-      <Route path = "/features" elements={<Featurespage/>}/>
-
+      <Route path = "/features" element={<Featurespage/>}/>
     </Routes>
   )
 }
