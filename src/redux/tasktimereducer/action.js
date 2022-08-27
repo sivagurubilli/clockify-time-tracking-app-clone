@@ -13,7 +13,7 @@ export const gettasks =()=>(dispatch)=>{
 export const gettask1 =(payload)=>(dispatch)=>{
  
   axios.get(`http://localhost:8080/tasks/${1}/task/${payload}`).then((r)=>{
-   
+      console.log(r.data)
       dispatch({type:types.GET_TASK1,payload:r.data})
   })
 }

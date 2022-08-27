@@ -55,6 +55,25 @@ useEffect(()=>{
 
  
  const start =()=>{
+  toast({
+    title: input,
+    description: "Time entry has been created",
+    status: 'success',
+    duration: 6000,
+    isClosable: true,
+  })
+
+
+  if(input==""){
+    toast({
+      title: "alert for task title",
+      description: "give title for task",
+      status: 'success',
+      duration: 6000,
+      isClosable: true,
+    })
+  }
+  
   let x = new Date()
   starttime.current = x.getHours()+ ":" +x.getMinutes()
   setcheck(!check)
@@ -72,13 +91,9 @@ useEffect(()=>{
 
 
  const stop =()=>{
-  toast({
-    title: input,
-    description: "Time entry has been created",
-    status: 'success',
-    duration: 6000,
-    isClosable: true,
-  })
+ 
+
+
 
   let y= new Date();
  setcheck(!check)
@@ -115,6 +130,8 @@ dispatch(sameidelem(id1))
  dispatch(updatetasks(watch,id1))
 
  let y= new Date();
+ 
+ if(input!=""){
  dispatch(addtasks({
   title:input,
   starttime:starttime.current,
@@ -122,8 +139,16 @@ dispatch(sameidelem(id1))
   timediff:watch,
   date:date1,
   tid:id1
- }))
-
+ }))}else{
+  toast({
+    title: "alert for task title",
+    description: "give title for task",
+    status: 'success',
+    duration: 6000,
+    isClosable: true,
+  })
+ }
+ 
     setwatch(0)
     let x = new Date()
     starttime.current = x.getHours()+ ":" +x.getMinutes()
@@ -229,7 +254,7 @@ for(var i=0;i<wdata.length;i++){
             </div>
 
             {
-              data.length <1 &&  <div  style ={{margin:"80px 400px", height:"300px", width:"300px" ,textAlign:"center", border:"1px " ,background:"white"}} ><img  src ="https://app.clockify.me/assets/ui-icons/empty-tracker-icon.webp" />
+              data.length <1 &&  <div  style ={{margin:"80px 30%", height:"300px", width:"300px" ,textAlign:"center", border:"1px " ,background:"white"}} ><img  src ="https://app.clockify.me/assets/ui-icons/empty-tracker-icon.webp" />
              <h1 >Lets Start Tracking your tasks for better time management  !!</h1>
              <h1>Clockify  your everyday</h1>
               </div>
