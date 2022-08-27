@@ -1,6 +1,7 @@
 import React from 'react'
 import style from "./TrackinApp.module.css";
 import styled from "styled-components";
+import {Link} from "react-router-dom";
 
 export const TrackingApp = () => {
   return (
@@ -13,7 +14,8 @@ export const TrackingApp = () => {
                 <img src="https://clockify.me/assets/images/time-tracking-app-desktop.png" alt="" />
                 <div className={style.btn}>
                 <H4>DESKTOP APP</H4>
-                <Button>Windows</Button>
+                
+                <Link to='/windows-time-tracking'> <Button>Windows</Button> </Link>
                 <Button>Mac</Button>
                 <Button>Linux</Button>
                 </div>

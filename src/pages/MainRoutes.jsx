@@ -8,6 +8,8 @@ import Featurespage from './Features';
 
 import Timetrackermain from './timetracker/Timetrackermain';
 import { Timer } from '../components/HomePage/Features/Timer';
+import { Timesheet } from '../components/HomePage/Features/Timesheet';
+import { DesktopWin } from '../components/HomePage/DesktopWin';
 
 
 const MainRoutes = () => {
@@ -21,6 +23,10 @@ const MainRoutes = () => {
       <Route path ="/download" element={<Download />}/>
 
       <Route path="timer-app" element={ <Timer /> } />
+      <Route path="/timesheet-app" element={ <Timesheet /> } />
+     
+      <Route path ="/windows-time-tracking" element={<DesktopWin />}/>
+      
       {/* <Route path='feature-list' element={} /> */}
 
 

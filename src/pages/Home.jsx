@@ -13,7 +13,7 @@ const Home = () => {
     <div>
       {/* <h1>home</h1> */}
       <Navbar />
-      <TopSection />
+      <TopSection head={'The most popular free'} head2={'time tracker'} head3={'for teams'} para={'Time tracking software used by millions. Clockify is a time tracker and timesheet app that lets you track work hours across projects. Unlimited users, free forever.'} />
       <Features />
       <TrackingApp />
       <Advantages />
