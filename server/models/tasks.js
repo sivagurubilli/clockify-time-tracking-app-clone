@@ -9,7 +9,8 @@ const tasksSchema = mongoose.Schema({
     endtime:{type:String,require:true},
     timediff:{type:Number,require:true},
     userId :{type:String},
-    date:{type:String}
+    date:{type:String},
+    tid:{type:String}
     
 
 })
