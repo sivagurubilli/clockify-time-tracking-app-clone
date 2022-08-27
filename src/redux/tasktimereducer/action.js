@@ -30,7 +30,7 @@ axios.delete(`http://localhost:8080/tasks/${1}/task/${payload}`).then((r)=>{
 
 
 export const updatetasks =(watch,id1)=>(dispatch)=>{
-   
+   console.log(watch,id1)
   axios.patch(`http://localhost:8080/tasks/${1}/task/${id1}`, watch).then((r)=>{
     console.log(r)
   })

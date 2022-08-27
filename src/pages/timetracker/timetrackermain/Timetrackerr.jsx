@@ -52,25 +52,6 @@ const date1 = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYea
  }
 
 
- const updatetask2=(id1)=>{
-  setplay(1)
-  setplayt(!playt)
-  setcheck(false)
- 
-    dispatch(updatetasks(watch,id1))
-    setwatch(0)
-    let x = new Date()
-    starttime.current = x.getHours()+ ":" +x.getMinutes()
-    if(!timer){
-      let id = setInterval(()=>{
-        setwatch((e)=>e+10)
-      },10)
-      settimer(id)
-    }
-  }
-
- 
-
 
  const stop =()=>{
 
@@ -95,6 +76,25 @@ setdate(date1)
 setplay(0)
 
  }
+
+ const updatetask2=(id1)=>{
+  setplay(1)
+  setplayt(!playt)
+  setcheck(false)
+ 
+    dispatch(updatetasks(watch,id1))
+    setwatch(0)
+    let x = new Date()
+    starttime.current = x.getHours()+ ":" +x.getMinutes()
+    if(!timer){
+      let id = setInterval(()=>{
+        setwatch((e)=>e+10)
+      },10)
+      settimer(id)
+    }
+  }
+
+ 
 
 useEffect(()=>{
 

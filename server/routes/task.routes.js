@@ -46,8 +46,9 @@ taskRouter.delete("/:userId/task/:id",async(req,res)=>{
 })
 
 taskRouter.patch("/:userId/task/:id",async(req,res)=>{
+    console.log(req.body)
     try{
-        await taskModel.findByIdAndUpdate({_id:req.params.id,},{timediff:timediff+req.body}).lean().exec()
+        await taskModel.findByIdAndUpdate({_id:req.params.id}).lean().exec()
 
         const task =await taskModel.findOne({_id:req.params.id})
         res.status(200).send(task)

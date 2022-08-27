@@ -25,7 +25,7 @@ const Tasklist = ({date,e,updatetask1}) => {
 
 
     const updatetask=()=>{
-        console.log(e._id)
+      
      updatetask1(e._id)
     }
 
