@@ -1,5 +1,8 @@
 import React from 'react'
+import Advantages from '../components/Footer/Advantages'
 import Footer from '../components/Footer/Footer'
+import Reviews from '../components/Footer/Reviews'
+import Support from '../components/Footer/Support'
 import { Features } from '../components/HomePage/Features'
 import Navbar from '../components/HomePage/Navbar'
 import { TopSection } from '../components/HomePage/TopSection'
@@ -13,6 +16,9 @@ const Home = () => {
       <TopSection />
       <Features />
       <TrackingApp />
+      <Advantages />
+      <Support />
+      <Reviews />
       <Footer />
     </div>
   )

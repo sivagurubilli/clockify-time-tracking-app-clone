@@ -11,28 +11,36 @@ export const TrackingApp = () => {
         <div className={style.div2}>
             <div>
                 <img src="https://clockify.me/assets/images/time-tracking-app-desktop.png" alt="" />
+                <div className={style.btn}>
                 <H4>DESKTOP APP</H4>
                 <Button>Windows</Button>
                 <Button>Mac</Button>
                 <Button>Linux</Button>
+                </div>
             </div>
             <div>
                 <img src="https://clockify.me/assets/images/time-tracking-app-web.png" alt="" />
+                <div className={style.btn}>
                 <H4>WEB APP</H4>
                 <Button>Edge</Button>
                 <Button>Chrome</Button>
                 <Button>Firefox</Button>
             </div>
+            </div>
             <div>
                  <img src="https://clockify.me/assets/images/time-tracking-app-mobile.png" alt="" />
+                <div className={style.btn}>
                  <H4>MOBILE APP</H4>
                  <Button>Android</Button>
                 <Button>iOS</Button>
             </div>
+            </div>
             <div>
                  <img src="https://clockify.me/assets/images/time-tracking-app-kiosk.png" alt="" />
+                <div className={style.btn}>
                  <H4>KIOSK APP</H4>
                  <Button>Any device</Button>
+            </div>
             </div>
         </div>
 

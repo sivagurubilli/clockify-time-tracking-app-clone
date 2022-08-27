@@ -44,9 +44,9 @@ const ListHeader = ({ children }) => {
 export default function Footer() {
   return (
     <>
-    <Advantages />
-    <Support />
-    <Reviews />
+    {/* <Advantages /> */}
+    {/* <Support /> */}
+    {/* <Reviews /> */}
     <Box
       // bg={useColorModeValue('gray.50', 'gray.900')}
       color={useColorModeValue('gray.700', 'gray.200')}
