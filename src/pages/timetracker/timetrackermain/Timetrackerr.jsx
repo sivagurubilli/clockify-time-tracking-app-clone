@@ -242,7 +242,7 @@ for(var i=0;i<wdata.length;i++){
 
          {
          data.length >0 && data.map((e,index)=>{
-          if(!e.tid || sameidtask.length<1 && e.timediff!=0 && !sameidtask.includes(e)){
+          if(!e.tid || sameidtask.length<1 && e.timediff!=0 ){
           return <Tasklist key ={index} date={date1} elem={e} updatetask1={ updatetask2}/>
 
           }
