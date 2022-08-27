@@ -9,7 +9,7 @@ export const Timer = () => {
   return (
     <div>
         <Navbar />
-        <TopSection />
+        <TopSection head={'Free Timer App'} para={'Clockify is the most popular clock timer app for tracking the amount of time you spend on projects, tasks, and various activities.'} />
 
         <div className={style.div}>
             

@@ -6,6 +6,8 @@ import Signup from '../pages/Signup';
 
 import Timetrackermain from './timetracker/Timetrackermain';
 import { Timer } from '../components/HomePage/Features/Timer';
+import { Timesheet } from '../components/HomePage/Features/Timesheet';
+import { DesktopWin } from '../components/HomePage/DesktopWin';
 
 
 const MainRoutes = () => {
@@ -16,6 +18,10 @@ const MainRoutes = () => {
       <Route path ="/signup" element={<Signup />}/>
       <Route path ="/login" element={<Login />}/>
       <Route path="timer-app" element={ <Timer /> } />
+      <Route path="/timesheet-app" element={ <Timesheet /> } />
+     
+      <Route path ="/windows-time-tracking" element={<DesktopWin />}/>
+      
       {/* <Route path='feature-list' element={} /> */}
 
     </Routes>

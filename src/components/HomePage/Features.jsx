@@ -19,10 +19,12 @@ export const Features = () => {
                 </div>
                 </Link>
                 <br />
+                <Link to='/timesheet-app'>
                 <div>
                     <h4>Timesheet</h4>
                     <p>Enter time in a weekly timesheet.</p>
                 </div>
+                </Link>
                 <div>
                     <h4>Calender</h4>
                     <p>Visually block out and manage time.</p>

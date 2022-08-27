@@ -3,23 +3,21 @@ import style from "./TopSection.module.css";
 import {Link} from "react-router-dom";
 import { Switch, FormControl, FormLabel } from '@chakra-ui/react'
 
-export const TopSection = () => {
+export const TopSection = ({head, head2,head3, para}) => {
 
-  const changeTheme = () => {
+  
     
-  }
+  // <span style={{ color: "#03A9F4" }}> 
     
   return (
     <div className={style.div}>
       <h1 className={style.header}>
-        {" "}
-        The most popular free{" "}
-        <span style={{ color: "#03A9F4" }}> time tracker for teams </span>{" "}
+        {head} 
+        <span style={{ color: "#03A9F4" }}> {' '}{head2}</span>
+        {' '}{head3}
       </h1>
       <p className={style.text}>
-        Time tracking software used by millions. Clockify is a time tracker and
-        timesheet app that lets you track work hours across projects. Unlimited
-        users, free forever.
+        {para}
       </p>
 
       <div className={style.stars}>
@@ -73,7 +71,7 @@ export const TopSection = () => {
       {/* Switch-Button */}
       <div className={style.switchBtn}>
       <FormControl display='flex' alignItems='center' >
-  <Switch id='email-alerts' onClick={changeTheme} />
+  <Switch id='email-alerts' />
 </FormControl>
       </div>
     </div>
