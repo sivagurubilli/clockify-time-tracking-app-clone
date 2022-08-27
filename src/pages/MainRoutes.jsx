@@ -4,6 +4,7 @@ import Home from './Home';
 import Login from './Login';
 import Signup from '../pages/Signup';
 import Download from '../pages/Download';
+import Featurespage from './Features';
 
 import Timetrackermain from './timetracker/Timetrackermain';
 import { Timer } from '../components/HomePage/Features/Timer';
@@ -16,7 +17,7 @@ const MainRoutes = () => {
       <Route path ="/timetrackermain/*" element={<Timetrackermain />}/>
       <Route path ="/signup" element={<Signup />}/>
       <Route path ="/login" element={<Login />}/>
-
+      <Route path="/features" element={<Featurespage/>}/>
       <Route path ="/download" element={<Download />}/>
 
       <Route path="timer-app" element={ <Timer /> } />
