@@ -6,7 +6,7 @@ const featuresPage = ()=>{
     return(
         <div>
             <div className="Upper">
-                <img src="" alt="" />
+                <img src={a} alt="" />
             </div>
         </div>
     )

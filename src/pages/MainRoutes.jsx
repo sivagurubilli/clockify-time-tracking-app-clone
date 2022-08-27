@@ -4,6 +4,7 @@ import Home from './Home';
 import Login from './Login';
 import Signup from '../pages/Signup';
 import Timetrackermain from './timetracker/Timetrackermain';
+import featuresPage from './Features';
 
 
 const MainRoutes = () => {
@@ -13,7 +14,7 @@ const MainRoutes = () => {
       <Route path ="/timetrackermain/*" element={<Timetrackermain />}/>
       <Route path ="/signup" element={<Signup />}/>
       <Route path ="/login" element={<Login />}/>
-
+      <Route path="/features" element={<featuresPage />}/>
     </Routes>
   )
 }
