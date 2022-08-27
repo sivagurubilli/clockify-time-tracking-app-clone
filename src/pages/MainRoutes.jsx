@@ -3,6 +3,7 @@ import {Routes, Route} from "react-router-dom";
 import Home from './Home';
 import Login from './Login';
 import Signup from '../pages/Signup';
+import Download from '../components/HomePage/Download';
 
 import Timetrackermain from './timetracker/Timetrackermain';
 
@@ -14,6 +15,7 @@ const MainRoutes = () => {
       <Route path ="/timetrackermain/*" element={<Timetrackermain />}/>
       <Route path ="/signup" element={<Signup />}/>
       <Route path ="/login" element={<Login />}/>
+      <Route path ="/download" element={<Download />}/>
 
     </Routes>
   )

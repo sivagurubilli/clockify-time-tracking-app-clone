@@ -14,8 +14,44 @@ import {
   border,
   color,
 } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { loginAPI } from "../redux/authreducer/Action";
+
 export default function Login() {
+  const navigate=useNavigate()
+  const dispatch=useDispatch()
+
+
+  const signupdata=JSON.parse(localStorage.getItem("logindetail"))
+
+
+  const[data,setData]=useState({
+    email:"",
+    password:""
+
+   })
+   const handlesubmit=(e)=>{
+    e.preventDefault()
+    if(signupdata.email==data.email&&signupdata.password==data.password)
+  {
+    alert("login suceess")
+    dispatch(loginAPI())
+    navigate("/")
+  }
+  else
+  {
+    alert("user datail does not match")
+  }
+
+
+   }
+   const handlechange=(e)=>{
+    let {name,value}=e.target
+    setData({...data,[name]:value})
+   }
+
   return (
     <>
       <div style={{ display: "flex", height: "80%", width: "100%" }}>
@@ -32,7 +68,7 @@ export default function Login() {
             </h4>
           </div>
 
-          <form>
+          <form onSubmit={handlesubmit}>
             <div
               style={{
                 height: "390px",
@@ -63,6 +99,7 @@ export default function Login() {
                 type="email"
                 placeholder=" Enter Email"
                 name="email"
+                onChange={handlechange}
               />
 
               <Input
@@ -75,6 +112,7 @@ export default function Login() {
                 type="password"
                 placeholder=" Choose Password"
                 name="password"
+                onChange={handlechange}
               />
               <div style={{ display: "flex", height: "45px", width: "90%" }}>
                 <input
@@ -105,7 +143,7 @@ export default function Login() {
                   Forgot password?
                 </div>
               </div>
-              <Button
+              <Button type="submit"
                 style={{
                   marginTop: "20px",
                   padding: "25px",
