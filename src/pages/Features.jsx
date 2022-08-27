@@ -1,4 +1,3 @@
-import { Center } from "@chakra-ui/react";
 import React from "react";
 import a from "./featuresimage/Screenshot (32).png";
 import b from "./featuresimage/Screenshot (33).png";
