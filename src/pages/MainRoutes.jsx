@@ -3,7 +3,7 @@ import {Routes, Route} from "react-router-dom";
 import Home from './Home';
 import Login from './Login';
 import Signup from '../pages/Signup';
-import Download from '../components/HomePage/Download';
+import Download from '../pages/Download';
 
 import Timetrackermain from './timetracker/Timetrackermain';
 
