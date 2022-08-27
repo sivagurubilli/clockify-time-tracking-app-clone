@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 export const Features = () => {
   return (
     <div className={style.maindiv}>
-    <div className={style.div}>
+     <div className={style.div}>
         <h2 className={style.header}>Time Management Features</h2>
         <p className={style.text}>Track productivity, attendance, and billable hours with a simple time tracker and timesheet.</p>
         {/* *********Section-1************** */}
@@ -18,6 +18,7 @@ export const Features = () => {
                     <p>Track work hours in real time.</p>
                 </div>
                 </Link>
+                <br />
                 <div>
                     <h4>Timesheet</h4>
                     <p>Enter time in a weekly timesheet.</p>
@@ -103,7 +104,13 @@ export const Features = () => {
             </div>
         </div>
 
+    <Link to={"/feature-list"}>
+            <button className={style.btn}>
+              SEE ALL FEATURES
+            </button>
+            </Link>
     </div>
+
   </div>
   )
 }

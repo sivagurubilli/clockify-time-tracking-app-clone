@@ -1,5 +1,6 @@
 .maindiv{
     font-family: 'Roboto', sans-serif;
+    margin-bottom: 50px;
 }
 
 .div{
@@ -104,5 +105,36 @@ padding-top: 30px;
     text-align: left;
     /* border: 2px solid black; */
 padding-top: 30px;
+}
+
+.btn{
+    padding-top: 5px;
+    margin-top: 25px;
+    margin-bottom: 2%;
+    border-radius: 5px;
+    background: #0288d1;
+    width: 330px;
+    height: 56px;
+    text-transform: uppercase;
+    color: #fff;
+    border-bottom: 4px solid #0277BD;
+    text-shadow: 0 1px 1px rgb(0 0 0 / 45%);
+    overflow: visible;
+    /* border: 0; */
+    font: inherit;
+    letter-spacing: inherit;
+    cursor: pointer;
+    /* appearance: auto; */
+    writing-mode: horizontal-tb !important;
+    word-spacing: normal;
+    display: inline-block;
+    text-align: center;
+    align-items: flex-start;
+    box-sizing: border-box;
+}
+
+.btn:hover{
+    background: #0b71a8;
+
 }
 
