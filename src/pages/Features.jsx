@@ -11,13 +11,15 @@ import h from "./featuresimage/Screenshot (39).png";
 import i from "./featuresimage/Screenshot (40).png";
 import j from "./featuresimage/Screenshot (41).png";
 import Footer from "../components/Footer/Footer";
+import Navbar from "./timetracker/navbar/Navbar";
 
 
 const Featurespage = ()=>{
     
     return(
         <div>
-            <div className="Upper">
+            <Navbar/>
+            <div style={{paddingTop:"30px"}} className="Upper">
                 <img style={{padding:"10px"}} src={a} alt="" />
                 <img style={{padding:"10px"}} src={b} alt="" />
                 <img style={{padding:"10px"}} src={c} alt="" />
