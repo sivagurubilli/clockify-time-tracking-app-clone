@@ -2,7 +2,7 @@
     text-align: center;
     font-family: 'Roboto', sans-serif;
     background-color: #f7fcff;
-    border: 2px solid black;
+    /* border: 2px solid black; */
     padding: 100px;
 }
 
@@ -34,7 +34,7 @@
 }
 
 .div2{
-    border: 2px solid black;
+    /* border: 2px solid black; */
 display: grid;
 grid-template-columns: repeat(2, 1fr);
 grid-template-rows: auto;
@@ -42,9 +42,20 @@ gap: 100px;
 }
 
 .div2 > div{
-    border: 2px solid blue;
-    text-align: center;
+    /* border: 2px solid blue; */
+    /* text-align: center; */
     /* justify-items: center; */
     justify-content: center;
   
+}
+
+.div2 img{
+    /* border: 2px solid black; */
+    text-align: left;
+}
+
+.btn{
+    /* border: 2px solid black; */
+    width: 70%;
+    margin-left: 60px;
 }
