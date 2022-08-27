@@ -13,12 +13,29 @@ taskRouter.get("/:userId/task",async(req,res)=>{
     res.send(tasks)
 })
 
+taskRouter.get("/:userId/task/:id",async(req,res)=>{
+   
+    const id = req.params.id
+
+    const tasks = await taskModel.find({tid:id})
+   
+    res.send(tasks)
+})
+
+
+taskRouter.get("/:userId/task/:id",async(req,res)=>{
+    const id1 = req.params.id
+    const task = await taskModel.findById(id1)
+
+    res.send(task)
+})
+
 taskRouter.post("/:userId/task",async(req,res)=>{
     const userId = req.params.userId
 
+
     // const {title,starttime,endtime,timediff} = req.body
-    // console.log(title)
-   
+  if(req.body.timediff!==0){
 
 let payload ={
     ...req.body,
@@ -36,19 +53,20 @@ tasks.save((err,success)=>{
     }
     return res.status(201).send(success)
 })
+}
 
 })
 
 
 taskRouter.delete("/:userId/task/:id",async(req,res)=>{
-  await taskModel.deleteOne({_id:req.params.id})
+  await taskModel.deleteMany({_id:req.params.id})
   res.send("succesfully delete task")
 })
 
 taskRouter.patch("/:userId/task/:id",async(req,res)=>{
-    console.log(req.body)
+   var pay = req.body
     try{
-        await taskModel.findByIdAndUpdate({_id:req.params.id}).lean().exec()
+        await taskModel.findByIdAndUpdate({_id:req.params.id},pay).lean().exec()
 
         const task =await taskModel.findOne({_id:req.params.id})
         res.status(200).send(task)

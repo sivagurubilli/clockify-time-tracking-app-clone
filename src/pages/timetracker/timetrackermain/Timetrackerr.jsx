@@ -7,8 +7,13 @@ import clock from "../timetrackasset/clock-blue.svg"
 import list from "../timetrackasset/list-blue.svg"
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
-import { addtasks, gettasks, removetask, updatetasks } from '../../../redux/tasktimereducer/action'
+import { addtasks, gettasks, removetask, updatetasks,gettask1, sameidelem } from '../../../redux/tasktimereducer/action'
 import Tasklist from './Tasklist'
+import Tasklistm from './tasklistm/Tasklistm'
+import { useSearchParams } from 'react-router-dom'
+import { useToast } from '@chakra-ui/react'
+
+
 
 
 const Timetracker = () => {
@@ -16,23 +21,36 @@ const Timetracker = () => {
   const [input,setinput] = useState("")
   const [timer,settimer] = useState(null)
   const [play,setplay]= useState(0)
+  const [tasktotal,settasktotal] = useState(0)
   const [check,setcheck] = useState(true)
   const [totaltime,settotaltime] = useState(0)
   const [date,setdate] = useState(new Date())
 const [playt,setplayt] = useState(true)
 const starttime = useRef(null)
 const dispatch = useDispatch()
-const data = useSelector((store)=>store.taskreducer1.taskdata)
 
+//console.log(singledata.timediff)
+
+const data = useSelector((store)=>store.taskreducer1.taskdata)
+const singledata = useSelector((store)=>store.taskreducer1.singletask)
+
+const sameidtask = useSelector((store)=>store.taskreducer1.tasksbyid)
+
+const toast = useToast()
+const [searchParams] =  useSearchParams()
 
 const current = new Date();
 const date1 = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
 
-
-
- useEffect(()=>{
+ const id = searchParams.getAll("up")
+useEffect(()=>{
   dispatch(gettasks())
- },[])
+   dispatch(sameidelem(id))
+ },[singledata,sameidtask,removetask])
+ 
+
+
+
 
 
  
@@ -40,7 +58,7 @@ const date1 = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYea
   let x = new Date()
   starttime.current = x.getHours()+ ":" +x.getMinutes()
   setcheck(!check)
-
+ 
 
   if(!timer){
     let id = setInterval(()=>{
@@ -54,7 +72,13 @@ const date1 = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYea
 
 
  const stop =()=>{
-
+  toast({
+    title: input,
+    description: "Time entry has been created",
+    status: 'success',
+    duration: 6000,
+    isClosable: true,
+  })
 
   let y= new Date();
  setcheck(!check)
@@ -70,19 +94,36 @@ setdate(date1)
   starttime:starttime.current,
   endtime:y.getHours()+ ":" +y.getMinutes(),
   timediff:watch,
-  date:date1
+  date:date1,
+
  }))
  }
+ 
 setplay(0)
 
  }
 
+
  const updatetask2=(id1)=>{
+  
+
   setplay(1)
   setplayt(!playt)
   setcheck(false)
- 
-    dispatch(updatetasks(watch,id1))
+ dispatch(gettask1(id1))
+dispatch(sameidelem(id1))
+ dispatch(updatetasks(watch,id1))
+
+ let y= new Date();
+ dispatch(addtasks({
+  title:input,
+  starttime:starttime.current,
+  endtime:y.getHours()+ ":" +y.getMinutes(),
+  timediff:watch,
+  date:date1,
+  tid:id1
+ }))
+
     setwatch(0)
     let x = new Date()
     starttime.current = x.getHours()+ ":" +x.getMinutes()
@@ -98,14 +139,35 @@ setplay(0)
 
 useEffect(()=>{
 
-  var total =0;
+  var wdata=[]
   for(var i=0;i<data.length;i++){
-    total += Number(data[i].timediff)
+    for(var l=0;l<data.length;l++){
+      if(data[i]._id==data[l].tid && data[i].timediff==data[l].timediff){
+        wdata.push(data[i])
+      }
+    }
+    
   }
+var total =0
+   for(var i=0;i<data.length;i++){
+    total += Number(data[i].timediff)
+   }
+var ddata =0
 
-  settotaltime(total)
+for(var i=0;i<wdata.length;i++){
+  ddata += Number(wdata[i].timediff)
+}
+ settotaltime(total-ddata)
+
+  var tasktotal =0;
+  for(var j=0;j<sameidtask.length;j++){
+    tasktotal+= Number(sameidtask[j].timediff)
+  }
+  settasktotal(tasktotal)
   
-},[stop,removetask])
+},[stop,removetask,start,updatetask2])
+
+
 
 
 
@@ -139,7 +201,7 @@ useEffect(()=>{
 
                     <div style={{borderRight:'1px solid #e4eaee', padding:'5px 20px 5px 0px', fontSize:'20px', color:'#999999'}}>$</div>
                     <div style={{fontWeight:'600', fontSize:'18px'}}>{mstotime(watch)}</div>
-                    <button className={styles.button1} style={check? {backgroundColor:"blue"}:{backgroundColor:"pink"}} onClick={check ? start : stop}>{check ? "START" : "STOP"}</button>
+                    <button className={styles.button1}    style={check? {backgroundColor:"blue"}:{backgroundColor:"pink"}} onClick={check ? start : stop}   >{check ? "START" : "STOP"}</button>
                     <div style={{display:'grid',gap:'10px'}}>
                         <img src={clock} alt="error" />
                         <img src={list} alt="error" />
@@ -159,11 +221,45 @@ useEffect(()=>{
                  <p style={{ fontSize:'18px', padding:'0px 10px', fontWeight:'500',color:'black'}}>{mstotime(totaltime)}</p> 
                  </div>
             </div>
-    
+            <div style={{display:'flex', justifyContent:'space-between'}}>
+                <p style={{ fontSize:'14px'}}>Total time spent on task</p>
+                <div style={{ fontSize:'12px', display:'flex', alignItems:'center',color:'#9c9c9c'}}> Total time on task { sameidtask!==  undefined && sameidtask.length  && sameidtask[0].title}:
+                 <p style={{ fontSize:'18px', padding:'0px 10px', fontWeight:'500',color:'black'}}>{mstotime(tasktotal)}</p> 
+                 </div>
+            </div>
 
-              {data.length>0 && data.map((e,ind)=>(
-                <Tasklist key ={ind} date={date1} e={e} updatetask1={ updatetask2}/>
-              ))}
+            {
+              data.length <1 &&  <div  style ={{margin:"80px 400px", height:"300px", width:"300px" ,textAlign:"center", border:"1px " ,background:"white"}} ><img  src ="https://app.clockify.me/assets/ui-icons/empty-tracker-icon.webp" />
+             <h1 >Lets Start Tracking your tasks for better time management  !!</h1>
+             <h1>Clockify  your everyday</h1>
+              </div>
+
+            }
+         { 
+          sameidtask.length>0 ? <Tasklistm  items ={sameidtask}/>:null
+         }
+
+
+         {
+         data.length >0 && data.map((e,index)=>{
+          if(!e.tid || sameidtask.length<1 && e.timediff!=0 && !sameidtask.includes(e)){
+          return <Tasklist key ={index} date={date1} elem={e} updatetask1={ updatetask2}/>
+
+          }
+         })}
+
+
+              
+         
+
+  
+      
+      
+
+         
+ 
+        
+            
            
     </div>
   )
