@@ -16,6 +16,7 @@ const MainRoutes = () => {
       <Route path ="/signup" element={<Signup />}/>
       <Route path ="/login" element={<Login />}/>
       <Route path="timer-app" element={ <Timer /> } />
+      {/* <Route path='feature-list' element={} /> */}
 
     </Routes>
   )
