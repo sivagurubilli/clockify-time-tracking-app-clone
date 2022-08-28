@@ -131,7 +131,7 @@ dispatch(sameidelem(id1))
 
  let y= new Date();
  
- if(input!=""){
+
  dispatch(addtasks({
   title:input,
   starttime:starttime.current,
@@ -139,15 +139,8 @@ dispatch(sameidelem(id1))
   timediff:watch,
   date:date1,
   tid:id1
- }))}else{
-  toast({
-    title: "alert for task title",
-    description: "give title for task",
-    status: 'success',
-    duration: 6000,
-    isClosable: true,
-  })
- }
+ }))
+ 
  
     setwatch(0)
     let x = new Date()

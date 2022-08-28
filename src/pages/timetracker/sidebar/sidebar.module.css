@@ -1,6 +1,6 @@
 
 .sidebarmain{
-  margin-top: 30px;
+  margin-top: 50px;
   border-top: 1px solid #cacaca;
   border-right: 1px solid #cacaca;
   width:20%;
@@ -42,9 +42,7 @@
   
     
   }
-.sidebardiv2{
-  
-}
+
 .sidebarheading{
   color: black;
   font-size:14px;
