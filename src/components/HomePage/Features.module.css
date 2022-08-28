@@ -42,10 +42,6 @@
    margin-top: 80px;
 }
 
-.div2 > div{
-    /* border: 2px solid green; */
-}
-
 .div2 > div:first-child{
     margin-right: 250px;
     margin-left: 300px;

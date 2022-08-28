@@ -19,9 +19,9 @@ const dispatch=useDispatch()
             <Box>
               <img src="https://clockify.me/assets/images/clockify-logo.svg" alt="" />
             </Box>
-
+            <Link to='/feature-list'>
             <Box>FEATURES</Box>
-
+            </Link>
 
             <Link to="/download">
             <Box>DOWNLOAD</Box>
