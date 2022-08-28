@@ -24,10 +24,10 @@ const Timetrackermain = () => {
 
 <Navbar props ={{toggle,togglenav}} />
 <div style ={{display:"flex"}}>
-<div style={toggle? {width:"20%"}:{width:"7%"}}>
+<div style={toggle? {width:"20%"}:{width:"10%"}}>
     <Sidebar props ={toggle}/>
 </div>
-<div style={toggle ? {background:"#f2f6f8", width:"80%",marginTop:"50px",height:"100vh"}:{width:"90%",background:"#f2f6f8",marginTop:"50px",height:"100vh"}}>
+<div style={toggle ? {background:"#f2f6f8", width:"80%",marginTop:"30px",height:'160vh', padding:"10px 20px"}:{width:"90%",background:"#f2f6f8",marginTop:"30px",height:"100vh"}}>
     <Routes>
         <Route path ="/" element ={<Timetracker/>}/>
         <Route path ="/calender" element={<Calender/>} />

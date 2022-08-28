@@ -8,7 +8,9 @@
   height: 100vh;
   position: fixed;
   z-index: 10000;
-
+  padding: 10px 5px;
+  margin-left: 10px;
+  border-left: 1px solid #cacaca;
 
 }
 
@@ -32,16 +34,15 @@
   background: linear-gradient(to left, white 50%, #e4eaee 50%) right;
   background-size:200%;
   transition: .3s ease-out;
+  cursor:pointer;
 }
 
 .sidebardiv1 :hover{
     background-position: left;
-     cursor:pointer;
+  
     
   }
-.sidebardiv2{
-  
-}
+
 .sidebarheading{
   color: black;
   font-size:14px;
